@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - TechHeaven</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Carrito</h1>
+    </header>
+    <main>
+        <% if (cartItems && cartItems.length > 0) { %>
+            <ul>
+                <% cartItems.forEach(item => { %>
+                    <li>
+                        <img src="<%= item.Product.imageUrl %>" alt="<%= item.Product.name %>">
+                        <h3><%= item.Product.name %></h3>
+                        <p>Precio: $<%= item.Product.price %></p>
+                        <p>Cantidad: <%= item.quantity %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>El carrito está vacío.</p>
+        <% } %>
+    </main>
+    <footer>
+        <p>© 2024 TechHeaven</p>
+    </footer>
+</body>
+</html>

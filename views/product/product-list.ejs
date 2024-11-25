@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora los mejores productos tecnológicos de TechHeaven.">
+    <meta name="author" content="TechHeaven Team">
+    <meta name="keywords" content="tecnología, productos, compras, TechHeaven">
+    <title>Productos - TechHeaven</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container header-container">
+            <img src="/images/logo.png" alt="TechHeaven Logo" class="logo">
+            <h1>TechHeaven</h1>
+        </div>
+    </header>
+
+    <!-- Navegación -->
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/products" class="active">Productos</a></li>
+            <li><a href="/cart">Carrito</a></li>
+            <li><a href="/auth/login">Iniciar Sesión</a></li>
+            <li><a href="/auth/register">Registrarse</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-container">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <div class="product-grid">
+            <% products.forEach(product => { %>
+                <div class="product-card">
+                    <img src="<%= product.imageUrl %>" alt="<%= product.name %>" class="product-image">
+                    <h3 class="product-title"><%= product.name %></h3>
+                    <p class="product-description"><%= product.description %></p>
+                    <p class="product-price"><strong>Precio:</strong> $<%= product.price %></p>
+                    <p class="product-category"><strong>Categoría:</strong> <%= product.category %></p>
+                    <a href="/products/<%= product.id %>" class="product-details-btn">Ver detalles</a>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>© 2024 TechHeaven. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
